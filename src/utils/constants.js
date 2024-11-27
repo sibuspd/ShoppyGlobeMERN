@@ -1,0 +1,1 @@
+export const product_api_url = "https://dummyjson.com/products";
