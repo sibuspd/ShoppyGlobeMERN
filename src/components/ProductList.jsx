@@ -1,5 +1,7 @@
 import useProducts from "../utils/useProducts"
 import { product_api_url as url } from "../utils/constants"
+import ProductItem from "./ProductItem";
+import "./ProductList.css"
 
 export default function ProductList(){
 
@@ -8,15 +10,12 @@ export default function ProductList(){
     const { products } = finalObject;
     
     return(
-        <div>
+        <div className="product-list">
             {loading && <p> Loading....</p>}
             {error && <p>Error: {error}</p>}
             {products && products.map(
                 product => (
-                    <div key={product.id}>
-                        <h2>{product.title}</h2>
-                        <p>{product.description}</p>
-                    </div>
+                    <ProductItem key={product.id} product = {product} /> // Passing each product as props
                 )
             )}
         </div>
