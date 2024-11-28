@@ -8,7 +8,9 @@ export default function ProductItem({ product }){
 
     const dispatch = useDispatch();
     
-    function handleAddToCart(){ // Event Handler defined for Add to Cart
+    function handleAddToCart(event){ // Event Handler defined for Add to Cart
+        event.stopPropagation(); // Stops redirecting users to ProductDetails component
+        event.preventDefault();  
         dispatch(addProduct(product));
     }
 
