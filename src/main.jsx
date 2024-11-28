@@ -17,7 +17,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-    error: <NotFound/>,
+    errorElement: <NotFound/>,
     children: [
       {
         path:"/product/:id",
