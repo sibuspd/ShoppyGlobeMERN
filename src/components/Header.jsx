@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 export default function Header(){
 
     return(
+        <div className="header-container">
+            <div className="welcome-message">
+                <h1>Welcome to ShoppyGlobe</h1>
+                <p>Your one-stop shop for amazing products!</p>
+            </div>
             <header>
                 <nav className="nav-container">
                     <div className="nav-links">
@@ -19,5 +24,6 @@ export default function Header(){
                     </div>
                 </nav>
             </header>
+        </div>
     );
 }
