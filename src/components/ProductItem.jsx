@@ -8,7 +8,7 @@ export default function ProductItem({ product }){
 
     const dispatch = useDispatch();
     
-    function handleAddToCart(product){ // Event Handler defined for Add to Cart
+    function handleAddToCart(){ // Event Handler defined for Add to Cart
         dispatch(addProduct(product));
     }
 
@@ -18,7 +18,7 @@ export default function ProductItem({ product }){
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <h4>₹ {(product.price*10).toFixed(1)}</h4>
-            <button onClick={handleAddToCart(product)}>Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     )
 }

@@ -22,6 +22,7 @@ header {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center; /* Ensures vertical alignment */
 }
 
 .nav-links li {
@@ -43,17 +44,19 @@ header {
   color: #ffdd57;
 }
 
-.cart {
+.cart-link {
   margin-left: auto;
+  display: flex; /* Ensures alignment within its container */
+  align-items: center; /* Ensures vertical alignment */
 }
 
-.cart a {
+.cart-link a {
   text-decoration: none;
   color: #fff;
   font-size: 1em;
   transition: color 0.3s ease;
 }
 
-.cart a:hover {
+.cart-link a:hover {
   color: #ffdd57;
 }

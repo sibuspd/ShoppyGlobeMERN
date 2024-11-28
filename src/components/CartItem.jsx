@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import "./CartItem.css"
 
 // DEALS WITH  EACH ITEM DISPLAYED IN THE CART LIST 'CART.JSX'
  const  CartItem = ({ product, onRemove, onQuantityChange}) => {
