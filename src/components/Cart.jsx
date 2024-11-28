@@ -15,7 +15,6 @@ export default function Cart(){
         dispatch(modifyQuantity({product, quantity})); // Sending both values wrapped in Object as payload
     }
 
-
     return(
         <div className="cart-container">
             <h1>Shopping Cart</h1>
