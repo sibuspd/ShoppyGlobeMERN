@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux"
 import { addProduct } from "../utils/cartSlice"
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 import "./ProductItem.css"
+
 
 export default function ProductItem({ product }){
 

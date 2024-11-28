@@ -1,6 +1,7 @@
 import useProducts from "../utils/useProducts"
 import { product_api_url as url } from "../utils/constants"
 import ProductItem from "./ProductItem";
+import { Link } from "react-router-dom";
 import "./ProductList.css"
 
 export default function ProductList(){
@@ -15,7 +16,9 @@ export default function ProductList(){
             {error && <p>Error: {error}</p>}
             {products && products.map(
                 product => (
-                    <ProductItem key={product.id} product = {product} /> // Passing each product as props
+                    <Link key={product.id} to={`/product/${product.id}`}>
+                        <ProductItem  product = {product} />
+                    </Link>
                 )
             )}
         </div>
