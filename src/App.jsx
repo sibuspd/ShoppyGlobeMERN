@@ -1,7 +1,8 @@
-// import './App.css'
+import './App.css'
 import { Outlet } from 'react-router'
 import Header from './components/Header'
 import { lazy, Suspense } from "react";
+import Footer from './components/Footer';
 
  // Following network calls only on navigating to corresponding Components
 const ProductDetail = lazy(()=> import('./components/ProductDetail'));
@@ -13,12 +14,15 @@ const NotFound = lazy(() => import('./components/NotFound'));
 function App() {
 
   return (
-    <>
-      <Header/>
-      <Suspense fallback={<h4>Loading.............</h4>}>
-        <Outlet/>
-      </Suspense>
-    </>
+    <div className="app">
+      <Header />
+      <main>
+        <Suspense fallback={<h3>Loading, please wait...........💫</h3>}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
