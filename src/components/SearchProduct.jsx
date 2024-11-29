@@ -13,8 +13,8 @@ export default function SearchProduct(){
     return(
         <>
             <div className="search-input">
-                <input type="text" placeholder="Search the product here."
-                onChange={handleSearchChange}/>
+                <input type="text" placeholder="Type the product here."
+                onChange={handleSearchChange}/>Search as you type 🔼
             </div>
         </>
     )

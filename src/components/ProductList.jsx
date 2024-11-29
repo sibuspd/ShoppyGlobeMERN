@@ -24,17 +24,21 @@ export default function ProductList(){
         p.title.toLowerCase().includes(searchWord.toLowerCase())):[]; // Matches search input word from store with product list 
         
     return(
-        <div className="product-list">
-            <SearchProduct/>
-            {loading && <p> Loading....</p>}
-            {error && <p>Error: {error}</p>}
-            {filteredProducts && filteredProducts.map(
-                product => (
-                    <Link key={product.id} to={`/product/${product.id}`} onClick={handleLinkClick}>
-                        <ProductItem  product = {product} />
-                    </Link>
-                )
-            )}
+        <div className="product-list-container">
+            <div className="search-container">
+                <SearchProduct/>
+            </div>
+            <div className="product-list">
+                {loading && <p> Loading....</p>}
+                {error && <p>Error: {error}</p>}
+                {filteredProducts && filteredProducts.map(
+                    product => (
+                        <Link key={product.id} to={`/product/${product.id}`} onClick={handleLinkClick}>
+                            <ProductItem  product = {product} />
+                        </Link>
+                    )
+                )}
+            </div>
         </div>
     );
 }
