@@ -68,3 +68,23 @@
     background-color: #0056b3;
   }
   
+  /* Media Queries */ 
+  
+  @media (max-width: 768px)
+  { 
+    .product-card { 
+      margin: 10px;
+      max-width: 100%;
+    } 
+  } 
+  
+  @media (max-width: 480px)
+  { 
+    .product-card { 
+      padding: 10px;
+    } 
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+  }

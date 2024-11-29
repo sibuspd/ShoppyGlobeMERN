@@ -8,3 +8,21 @@
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
+/* Media Queries */ 
+
+@media (max-width: 768px) {
+  .search-input { 
+    margin: 10px; 
+  } 
+  .search-input input { 
+    
+    padding: 8px;
+  }
+} 
+
+@media (max-width: 480px) {
+.search-input input {
+  padding: 6px; 
+  } 
+}

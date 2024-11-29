@@ -19,3 +19,18 @@
   color: #666;
   text-align: center;
 }
+
+/* Media Queries */ 
+
+@media (max-width: 768px) 
+{ 
+  .cart-container
+  { 
+  padding: 15px; }
+} 
+
+@media (max-width: 480px) 
+{ .cart-container 
+  {
+  padding: 10px; }
+}
