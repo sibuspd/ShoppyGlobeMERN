@@ -31,6 +31,6 @@ ProductItem.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
-        images: PropTypes.string.isRequired
+        images: PropTypes.array.isRequired
     }).isRequired
 };

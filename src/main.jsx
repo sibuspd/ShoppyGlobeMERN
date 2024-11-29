@@ -1,16 +1,18 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-// import './index.css'
 import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Provider } from "react-redux"
 import shopStore  from './utils/shopStore.js'  
-import ProductDetail from './components/ProductDetail.jsx'
-import NotFound from "./components/NotFound.jsx"
 import ProductList from './components/ProductList.jsx'
-import About from './components/About.jsx'
-import Cart from './components/Cart.jsx'
-import Contact from './components/Contact.jsx'
+import { lazy, Suspense } from "react";
+import Spinner from "./components/Spinner"
+ // Following network calls only on navigating to corresponding Components
+ const ProductDetail = lazy(()=> import('./components/ProductDetail'));
+ const About = lazy(() => import('./components/About'));
+ const Cart = lazy(() => import('./components/Cart'));
+ const Contact = lazy(() => import('./components/Contact'));
+ const NotFound = lazy(() => import('./components/NotFound'));
 
 // Router Configuration
 const appRouter = createBrowserRouter([
@@ -21,23 +23,23 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path:"/product/:id",
-        element: <ProductDetail/> 
+        element: <Suspense fallback={<Spinner />}><ProductDetail/></Suspense> 
       },
       {
         path:"/",
-        element: <ProductList/>
+        element: <Suspense fallback={<Spinner />}><ProductList/></Suspense>
       },
       {
         path:"/about",
-        element: <About/>
+        element: <Suspense fallback={<Spinner />}><About/></Suspense>
       },
       {
         path:"/cart",
-        element: <Cart/>
+        element: <Suspense fallback={<Spinner />}><Cart/></Suspense>
       },
       {
         path:"/contact",
-        element: <Contact/>
+        element: <Suspense fallback={<Spinner />}><Contact/></Suspense>
       }
     ]
   }
