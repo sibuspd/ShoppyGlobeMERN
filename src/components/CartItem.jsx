@@ -13,7 +13,7 @@ import "./CartItem.css"
             <img src={product.images}/>
             <div>
                 <h2>{product.title}</h2>
-                <p>Price: ₹ {(product.price * 10).toFixed(1)}</p>
+                <p>Price: ₹ <b>{(product.price * 10).toFixed(1)}</b> each x Quantity <b>{product.minimumOrderQuantity}</b></p>
                 <input type="number" value={product.minimumOrderQuantity} 
                 onChange={handleQuantityChange} min="1"/>
                 <button onClick={onRemove}>Remove</button> 
