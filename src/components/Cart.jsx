@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 import "./Cart.css"
 
 export default function Cart(){
-    const shopCart = useSelector(state => state.shopCart); // Subscribes to the store's cartSlice state
+    const shopCart = useSelector(state => state.shopCart.items); // Subscribes to the store's cartSlice state
     const dispatch = useDispatch(); // For sending Actions
 
     function handleRemoveFromCart(product){

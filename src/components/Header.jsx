@@ -4,8 +4,8 @@ import { useSelector } from "react-redux"
 
 export default function Header(){
 
-    const itemCount = useSelector(store => store.shopCart);
-    console.log(itemCount);
+    const itemCount = useSelector(store => store.shopCart.items.length);
+    console.log(itemCount); // The updated array of Items
 
     return(
         <div className="header-container">
@@ -24,7 +24,7 @@ export default function Header(){
                     </div> 
                     
                     <div className="cart-link">
-                        <Link to="/cart">Cart Items 🛒 {itemCount.length}</Link>
+                        <Link to="/cart">Cart Items 🛒 {itemCount}</Link>
                     </div>
                 </nav>
             </header>
