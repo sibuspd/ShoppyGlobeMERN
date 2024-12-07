@@ -7,7 +7,7 @@ import bcrypt from "bcryptjs"
 export const registerUser = async (req, res) => { // User Registration
     const { username, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10); // 
-    const user = new User({ username, password: hashedPassword });
+    const user = new userModel({ username, password: hashedPassword });
 
     try{
         await user.save();

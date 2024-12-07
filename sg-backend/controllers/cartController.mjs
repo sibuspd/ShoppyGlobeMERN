@@ -8,7 +8,7 @@ export const addToCart = async ( req, res) => { // ADDING TO CART
         if(!product)
             return res.status(404).json({message: "Cannot find the product"});
 
-        const cartItem = new cartModel({ product, quantity}); // Add an Entry in line with Cart Model
+        const cartItem = new cartModel({ productId, quantity}); // Add an Entry in line with Cart Model
         await cartItem.save(); // Asynchronous in nature
         res.status(201).json(cartItem); // Resource successfully added
     }
@@ -32,10 +32,10 @@ export const updateQuantity = async ( req, res) => { //UPDATING QUANTITY
 };
 
 export const removeItem = async ( req, res) => { // DELETING AN ITEM FROM CART
-    try { const cartItem = await cartModel.findById(req.params.id);
+    try { const cartItem = await cartModel.findByIdAndDelete(req.params.id);
         if (!cartItem) 
             return res.status(404).json({ message: 'Item not found' });
-        await cartItem.remove(); res.json({ message: 'Item removed' });
+        res.json({ message: 'Item removed' });
     } 
     catch(err){ 
         res.status(500).json({ message: err.message });
