@@ -1,6 +1,6 @@
 // LOGIC FOR REGISTRATION AND LOGIN
 
-import userModel from "../models/User";
+import userModel from "../models/User.mjs";
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
 

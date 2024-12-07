@@ -3,9 +3,9 @@
 import express from 'express';
 import { getAllProducts, getProductById } from "../controllers/productController.mjs"
 
-const router = express.Router(); // An instance of Express Router Module Object
+const productRoutes = (app) => {
+    app.get('/products', getAllProducts ); // Reference to Controller
+    app.get('/products/:id', getProductById );
+};
 
-router.get('/products', getAllProducts ); // Reference to Controller
-router.get('/products/:id', getProductById );
-
-export default router
+export default productRoutes
