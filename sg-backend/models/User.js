@@ -1,3 +1,5 @@
+// MODEL FOR USER CREDENTIALS
+
 import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema({
